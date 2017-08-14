@@ -153,7 +153,7 @@ class JavacWrapper(
         compilationUnit.packageAnnotations/*.map { TreeBasedAnnotation(it, compilationUnit, this) }*/
     }
 
-    val classifierResolver = ClassifierResolver(this)
+    private val classifierResolver = ClassifierResolver(this)
     private val identifierResolver = IdentifierResolver(this)
     private val kotlinClassifiersCache by lazy { KotlinClassifiersCache(if (javaFiles.isNotEmpty()) kotlinFiles else emptyList(), this) }
     private val symbolBasedPackagesCache = hashMapOf<String, SymbolBasedPackage?>()
